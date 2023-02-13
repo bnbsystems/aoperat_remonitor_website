@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "title": "RE Monitor",
+    "titleTemplate": "%s",
+    "description": "Monitorujemy rynek nieruchomości.",
+    "siteUrl": "https://remonitor.pl",
+    "image": "/assets/aoperat-logo-transparent.png",
+    "iconimage": "/assets/aoperat-logo-transparent.png"
+  },
+  "ga": "UA-XXXXXXXXX-X"
+}
