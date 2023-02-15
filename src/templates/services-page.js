@@ -18,10 +18,24 @@ export const pageQuery = graphql`
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
-        listSectionTitle,
-        listItems,
         contactSectionTitle,
         contactSectionText,
+      }
+    }
+    posts:allMarkdownRemark (
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { template: { eq: "blog-post" } } }
+    ) {
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 250)
+          frontmatter {
+            slug
+            title
+            description
+          }
+        }
       }
     }
   }
@@ -29,9 +43,9 @@ export const pageQuery = graphql`
 
 
 const ServicesPage = ({ data }) => {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+  const { markdownRemark, posts } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-
+  console.log(posts.edges)
   return (
     <Layout className="page">
       <Seo title={"RE Monitor - Usługi"} description={frontmatter.subheading} />
@@ -39,8 +53,7 @@ const ServicesPage = ({ data }) => {
         title={frontmatter.title}
         subheading={frontmatter.subheading}
         image={frontmatter.image}
-        listSectionTitle={frontmatter.listSectionTitle}
-        listItems={frontmatter.listItems}
+        posts={posts.edges}
         contactSectionTitle={frontmatter.contactSectionTitle}
         contactSectionText={frontmatter.contactSectionText}
         contentComponent={HTMLContent}

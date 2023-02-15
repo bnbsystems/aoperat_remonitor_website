@@ -5,28 +5,7 @@
 }
 
 .board-wrapper {
-  background-color: rgba(76, 156, 98, 0.75);
-}
-
-.board {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-    border-spacing: 2rem;
-    .board-row {
-      display: table-row;
-      div {
-        display: table-cell;
-        text-align: center;
-        margin-bottom: 10px;
-        a {
-          color: whitesmoke
-        }
-      }
-      div :hover{
-        color: black;
-      }
-    }
+  background-color: rgba(76, 156, 98, 1);
 }
 
 .board-items {
