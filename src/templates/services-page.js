@@ -45,7 +45,7 @@ export const pageQuery = graphql`
 const ServicesPage = ({ data }) => {
   const { markdownRemark, posts } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-  console.log(posts.edges)
+
   return (
     <Layout className="page">
       <Seo title={"RE Monitor - Usługi"} description={frontmatter.subheading} />
