@@ -40,7 +40,14 @@ collections:
           required: false,
           tagname: "",
         }
-
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          dateFormat: "YYYY-MM-DD",
+          timeFormat: "HH:mm",
+          format: "YYYY-MM-DD HH:mm",
+        }
       - {
           label: "Body",
           name: "body",

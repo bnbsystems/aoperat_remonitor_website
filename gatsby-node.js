@@ -8,7 +8,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }){
         edges {
           node {
             id
@@ -17,6 +17,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             }
             frontmatter {
               slug
+              date(formatString: "MMMM DD, YYYY")
               template
               title
             }

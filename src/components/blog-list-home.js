@@ -5,6 +5,7 @@ import PostCard from "./post-card"
 export const blogListQuery = graphql`
   query BlogListHomeQuery {
     allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { template: { eq: "blog-post" } } }
       limit: 6
     ) {
