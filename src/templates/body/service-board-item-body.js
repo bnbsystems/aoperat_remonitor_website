@@ -1,73 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri"
 import Content from "../../components/content"
 
-const styles = {
-  pagination: {
-    a: {
-      color: "muted",
-      "&.is-active": {
-        color: "text",
-      },
-      "&:hover": {
-        color: "text",
-      },
-    },
-  },
-}
-
-const Pagination = props => (
-  <div className="pagination -post" sx={styles.pagination}>
-    <ul>
-      {props.previous && props.previous.frontmatter.template === "blog-post" && (
-        <li>
-          <Link to={props.previous.fields.slug} rel="prev">
-            <p
-              sx={{
-                color: "muted",
-              }}
-            >
-              <span className="icon -left">
-                <RiArrowLeftLine />
-              </span>{" "}
-              Poprzedni
-            </p>
-            <span className="page-title">
-              {props.previous.frontmatter.title}
-            </span>
-          </Link>
-        </li>
-      )}
-      {props.next && props.next.frontmatter.template === "blog-post" && (
-        <li>
-          <Link to={props.next.fields.slug} rel="next">
-            <p
-              sx={{
-                color: "muted",
-              }}
-            >
-              Następny{" "}
-              <span className="icon -right">
-                <RiArrowRightLine />
-              </span>
-            </p>
-            <span className="page-title">{props.next.frontmatter.title}</span>
-          </Link>
-        </li>
-      )}
-    </ul>
-  </div>
-)
-
-const PostBody = ({title, image, previous, next, content, contentComponent}) => {
-  let props = {
-    previous,
-    next,
-  }
-
+const ServiceBoardItemBody = ({title, image, content, contentComponent}) => {
   const PostContent = contentComponent || Content;
   
   return (
@@ -115,13 +51,10 @@ const PostBody = ({title, image, previous, next, content, contentComponent}) => 
             <section>
             <PostContent content={content} />
             </section>
-            <section>
-            {(previous || next) && <Pagination {...props} />}
-            </section>
           </div>
         </div>
       </div>
   )
 }
 
-export default PostBody;
+export default ServiceBoardItemBody;

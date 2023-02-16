@@ -22,16 +22,17 @@ export const pageQuery = graphql`
         contactSectionText,
       }
     }
-    posts:allMarkdownRemark (
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { template: { eq: "blog-post" } } }
+    serviceBoardItems:allMarkdownRemark (
+      filter: { frontmatter: { template: { eq: "service-board-item" } } }
     ) {
       edges {
         node {
           id
           excerpt(pruneLength: 250)
-          frontmatter {
+          fields {
             slug
+          }
+          frontmatter {
             title
             description
           }
@@ -43,7 +44,7 @@ export const pageQuery = graphql`
 
 
 const ServicesPage = ({ data }) => {
-  const { markdownRemark, posts } = data // data.markdownRemark holds your post data
+  const { markdownRemark, serviceBoardItems } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
 
   return (
@@ -53,7 +54,7 @@ const ServicesPage = ({ data }) => {
         title={frontmatter.title}
         subheading={frontmatter.subheading}
         image={frontmatter.image}
-        posts={posts.edges}
+        serviceBoardItems={serviceBoardItems.edges}
         contactSectionTitle={frontmatter.contactSectionTitle}
         contactSectionText={frontmatter.contactSectionText}
         contentComponent={HTMLContent}
