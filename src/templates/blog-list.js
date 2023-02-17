@@ -33,9 +33,10 @@ export const blogListQuery = graphql`
         node {
           id
           excerpt(pruneLength: 250)
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+          fields {
             slug
+          }
+          frontmatter {
             title
             featuredImage {
               childImageSharp {
@@ -48,6 +49,7 @@ export const blogListQuery = graphql`
     }
   }
 `
+
 const Pagination = props => (
   <div className="pagination" sx={styles.pagination}>
     <ul>
@@ -97,7 +99,6 @@ class BlogIndex extends React.Component {
     const nextPage = blogSlug + (currentPage + 1).toString()
 
     const posts = data.allMarkdownRemark.edges
-      .filter(edge => !!edge.node.frontmatter.date)
       .map(edge => <PostCard key={edge.node.id} data={edge.node} />)
     let props = {
       isFirst,

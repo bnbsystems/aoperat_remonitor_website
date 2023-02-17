@@ -13,9 +13,10 @@ export const blogListQuery = graphql`
         node {
           id
           excerpt(pruneLength: 250)
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+          fields {
             slug
+          }
+          frontmatter {
             title
             featuredImage {
               childImageSharp {
@@ -35,8 +36,8 @@ const BlogListHome = () => {
     render={(data) => {
       const { edges: posts } = data.allMarkdownRemark
       const formattedPosts = posts
-      .filter(edge => !!edge.node.frontmatter.date)
       .map(edge => <PostCard key={edge.node.id} data={edge.node} />)
+      console.log(formattedPosts)
     return(<PostMaker data={formattedPosts} />)
   }}
   />

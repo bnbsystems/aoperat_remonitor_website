@@ -8,12 +8,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }){
         edges {
           node {
             id
+            fields {
+              slug
+            }
             frontmatter {
               slug
+              date(formatString: "MMMM DD, YYYY")
               template
               title
             }
@@ -38,8 +42,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
 
+    let pagePath = post.node.frontmatter.slug
+    if(post.node.frontmatter.template === "blog-post" || post.node.frontmatter.template === 'service-board-item'){
+      pagePath = post.node.fields.slug
+    }
+    
     createPage({
-      path: post.node.frontmatter.slug,
+      path: pagePath,
       component: path.resolve(
         `src/templates/${String(post.node.frontmatter.template)}.js`
       ),

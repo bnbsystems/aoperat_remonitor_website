@@ -1,21 +1,17 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { graphql } from "gatsby"
-import { HTMLContent } from "../components/content"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import PostBody from "./body/blog-post-body"
+import ServiceBoardItemBody from "./body/service-board-item-body"
+import { HTMLContent } from "../components/content"
 
-
-
-const Post = ({ data, pageContext }) => {
+const ServiceBoardItem = ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html, excerpt } = markdownRemark
-
   const Image = frontmatter.featuredImage
     ? frontmatter.featuredImage.childImageSharp.gatsbyImageData
     : ""
-  const { previous, next } = pageContext
 
   return (
     <Layout className="page">
@@ -24,14 +20,11 @@ const Post = ({ data, pageContext }) => {
         description={
           frontmatter.description ? frontmatter.description : excerpt
         }
-        image={Image}
         article={true}
       />
-      <PostBody 
+      <ServiceBoardItemBody 
         title={frontmatter.title}
         image={Image}
-        previous={previous}
-        next={next}
         content={html}
         contentComponent={HTMLContent}
       />
@@ -39,7 +32,7 @@ const Post = ({ data, pageContext }) => {
   )
 }
 
-export default Post
+export default ServiceBoardItem
 
 export const pageQuery = graphql`
   query BlogPostQuery($id: String!) {
@@ -47,9 +40,6 @@ export const pageQuery = graphql`
       id
       html
       excerpt(pruneLength: 148)
-      fields{
-        slug
-      }
       frontmatter {
         title
         description

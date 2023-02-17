@@ -5,17 +5,18 @@ import Content from "../../components/content.js";
 import { RiArrowRightLine } from "react-icons/ri";
 
 
-const ServicesPageBody = ({ title, subheading, image, posts, contactSectionTitle, contactSectionText, content, contentComponent }) => {
+const ServicesPageBody = ({ title, subheading, image, serviceBoardItems, contactSectionTitle, contactSectionText, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
-  function mapPostToBoardItem (post) {
+  
+  function mapBoardItemToHtml (item) {
     return (
       <div>
-      <Link to={post.slug}>
-        {post.title}
+      <Link to={item.fields.slug}>
+        {item.frontmatter.title}
         <span className="icon -right">
           <RiArrowRightLine />
         </span>
-        <div style={{fontSize: "small"}}>{post.description}</div>
+        <div style={{fontSize: "small"}}>{item.frontmatter.description}</div>
       </Link>
     </div>
     )
@@ -34,7 +35,7 @@ const ServicesPageBody = ({ title, subheading, image, posts, contactSectionTitle
                 </h3>
               </div>
             <div className="board-items">
-            {posts?.map(x => mapPostToBoardItem(x.node.frontmatter))}
+            {serviceBoardItems?.map(x => mapBoardItemToHtml(x.node))}
             </div>
           </div>
         </div>
