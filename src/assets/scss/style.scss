@@ -117,6 +117,10 @@ $secondary-black-60: rgba(33, 35, 38, 0.6);
   justify-content: flex-start;
 }
 
+.is-full-width {
+  width: 100%;
+}
+
 .is-centered {
   display: flex;
   align-items: center;
