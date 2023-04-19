@@ -32,7 +32,7 @@ export default function ContactForm () {
           </div>
           <div>
             <label htmlFor="phone">
-              Nr Telefonu
+              Nr telefonu
             </label>
             <input className="text-input" type="text" name="phone" id="phone" required />
           </div>
