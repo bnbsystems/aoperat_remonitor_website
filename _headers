@@ -179,6 +179,17 @@
   Link: </component---src-templates-blog-post-js-0d6848731b98bfcfeda2.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/blog/analiza-socjodemograficzna/page-data.json>; rel=preload; as=fetch; crossorigin
+/blog/doradztwo-inwestycyjne/
+  Link: </webpack-runtime-a8da9b3132763220cb81.js>; rel=preload; as=script
+  Link: </framework-245473fdbdce8902a38c.js>; rel=preload; as=script
+  Link: </app-a92f4f1265ef84c786b6.js>; rel=preload; as=script
+  Link: </78e521c3-cdd2ce931c13eddd09b7.js>; rel=preload; as=script
+  Link: </1bfc9850-896a4fa187ef532f5463.js>; rel=preload; as=script
+  Link: </cba34c021f6f1decaa1d66a81c5a51fd54a69b08-97354b4f9dca9197adfe.js>; rel=preload; as=script
+  Link: </e652ae1bf7cec188fc7ca641177acead931f08aa-872c7915beeb6831569b.js>; rel=preload; as=script
+  Link: </component---src-templates-blog-post-js-0d6848731b98bfcfeda2.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/blog/doradztwo-inwestycyjne/page-data.json>; rel=preload; as=fetch; crossorigin
 /blog/rest-api/
   Link: </webpack-runtime-a8da9b3132763220cb81.js>; rel=preload; as=script
   Link: </framework-245473fdbdce8902a38c.js>; rel=preload; as=script
@@ -201,17 +212,6 @@
   Link: </component---src-templates-blog-post-js-0d6848731b98bfcfeda2.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/blog/wycena-nieruchomości/page-data.json>; rel=preload; as=fetch; crossorigin
-/blog/doradztwo-inwestycyjne/
-  Link: </webpack-runtime-a8da9b3132763220cb81.js>; rel=preload; as=script
-  Link: </framework-245473fdbdce8902a38c.js>; rel=preload; as=script
-  Link: </app-a92f4f1265ef84c786b6.js>; rel=preload; as=script
-  Link: </78e521c3-cdd2ce931c13eddd09b7.js>; rel=preload; as=script
-  Link: </1bfc9850-896a4fa187ef532f5463.js>; rel=preload; as=script
-  Link: </cba34c021f6f1decaa1d66a81c5a51fd54a69b08-97354b4f9dca9197adfe.js>; rel=preload; as=script
-  Link: </e652ae1bf7cec188fc7ca641177acead931f08aa-872c7915beeb6831569b.js>; rel=preload; as=script
-  Link: </component---src-templates-blog-post-js-0d6848731b98bfcfeda2.js>; rel=preload; as=script
-  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
-  Link: </page-data/blog/doradztwo-inwestycyjne/page-data.json>; rel=preload; as=fetch; crossorigin
 /blog
   Link: </webpack-runtime-a8da9b3132763220cb81.js>; rel=preload; as=script
   Link: </framework-245473fdbdce8902a38c.js>; rel=preload; as=script
